@@ -27,7 +27,6 @@ public class RepositoryTicket {
   }
 
   public TicketData[] getAll() {
-    Arrays.sort(tickets);
     return tickets;
   }
 }
