@@ -1,5 +1,7 @@
 package ru.netology;
 
+import java.util.Arrays;
+
 public class ManagerTicket {
   private RepositoryTicket ticketData;
 
@@ -32,6 +34,7 @@ public class ManagerTicket {
         result = newResult;
       }
     }
+    Arrays.sort(result);
     return result;
   }
 
