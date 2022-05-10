@@ -10,11 +10,11 @@ class TicketTest {
   public void addTicket() {
     RepositoryTicket tickets = new RepositoryTicket();
     TicketData ticketMoskow = new TicketData(1, 2500, "DME", "EGO", 3600);
-    TicketData ticketSamara = new TicketData(2, 2600, "DME", "KUF", 3300);
+    TicketData ticketSamara = new TicketData(2, 2900, "DME", "KUF", 3300);
     TicketData ticketVlad = new TicketData(3, 3600, "DME", "OGZ", 3900);
     tickets.addTicket(ticketMoskow);
-    tickets.addTicket(ticketVlad);
     tickets.addTicket(ticketSamara);
+    tickets.addTicket(ticketVlad);
     TicketData[] actual = tickets.getAll();
     TicketData[] expected = {ticketMoskow, ticketSamara, ticketVlad};
     Assertions.assertArrayEquals(expected, actual);
@@ -48,7 +48,6 @@ class TicketTest {
     managerTicket.addManagerTicket(ticketSamara);
     managerTicket.addManagerTicket(ticketVlad);
     TicketData[] actual = managerTicket.findAll("DME", "OGZ");
-    ;
     TicketData[] expected = {ticketVlad, ticketVladS};
     Assertions.assertArrayEquals(expected, actual);
   }
