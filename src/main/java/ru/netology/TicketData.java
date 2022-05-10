@@ -1,5 +1,7 @@
 package ru.netology;
 
+import java.util.Comparator;
+
 public class TicketData implements Comparable<TicketData> {
   private int id;
   private int price;
@@ -16,8 +18,8 @@ public class TicketData implements Comparable<TicketData> {
     this.travelTime = travelTime;
   }
 
-  private int getPrice() {
-    return price;
+  public int travelTime() {
+    return travelTime;
   }
 
   public String getDepartureAirport() {
@@ -34,8 +36,8 @@ public class TicketData implements Comparable<TicketData> {
 
   //TODO сортировка по цене от меньшей к большей
   public int compareTo(TicketData o) {
-    TicketData ticketData = (TicketData) o;
-    return this.price - ticketData.price;
+    return this.price - o.price;
   }
+
 
 }

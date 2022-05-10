@@ -47,9 +47,8 @@ class TicketTest {
     managerTicket.addManagerTicket(ticketMoskow);
     managerTicket.addManagerTicket(ticketSamara);
     managerTicket.addManagerTicket(ticketVlad);
-    TicketData[] actual = managerTicket.findAll("DME", "OGZ");
-    ;
-    TicketData[] expected = {ticketVlad, ticketVladS};
+    TicketData[] actual = managerTicket.findAll("DME", "OGZ", new TicketByTimeAscComparator());
+    TicketData[] expected = {ticketVladS, ticketVlad};
     Assertions.assertArrayEquals(expected, actual);
   }
 
